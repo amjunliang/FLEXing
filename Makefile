@@ -1,3 +1,7 @@
+# make package install
+export THEOS_DEVICE_IP = 10.105.12.136
+export THEOS_DEVICE_PORT = 22
+
 export ARCHS = arm64 armv7 armv7s arm64e
 export TARGET = iphone:latest:9.0
 INSTALL_TARGET_PROCESSES = SpringBoard
@@ -7,6 +11,7 @@ TWEAK_NAME = FLEXing
 $(TWEAK_NAME)_GENERATOR = internal
 $(TWEAK_NAME)_FILES = Tweak.xm SpringBoard.xm
 $(TWEAK_NAME)_CFLAGS += -fobjc-arc -w
+$(TWEAK_NAME)_FRAMEWORKS = UIKit
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 

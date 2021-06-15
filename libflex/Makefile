@@ -1,3 +1,7 @@
+# make package install
+export THEOS_DEVICE_IP = 10.105.12.136
+export THEOS_DEVICE_PORT = 22
+
 export ARCHS = arm64 armv7 armv7s arm64e
 export TARGET = iphone:latest:9.0
 include $(THEOS)/makefiles/common.mk
@@ -21,7 +25,7 @@ IMPORTS = -I$(FLEX_ROOT)/Classes/ $(call dtoim, $(_IMPORTS))
 
 TWEAK_NAME = libFLEX
 $(TWEAK_NAME)_FILES = libFLEX.x $(SOURCES)
-$(TWEAK_NAME)_FRAMEWORKS = CoreGraphics UIKit ImageIO QuartzCore
+$(TWEAK_NAME)_FRAMEWORKS = CoreGraphics UIKit ImageIO QuartzCore SceneKit WebKit Security
 $(TWEAK_NAME)_LIBRARIES = sqlite3 z
 $(TWEAK_NAME)_CFLAGS += -fobjc-arc -w -Wno-unsupported-availability-guard $(IMPORTS) -g
 
